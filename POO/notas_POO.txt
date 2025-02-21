@@ -1,0 +1,626 @@
+Sergio Fernando Rodríguez Hernández
+Curso de Udemy: Universidad de Python - POO, PySide, Tkinter, Django y Flask!
+Tema: Funciones
+
+Notas de la lección:
+
+    ->  Clases y objetos.
+        Definimos a una clase como una plantilla a partir de la cual podemos crear instancias u objetos. La clase
+        poseerá atributos y métodos que definirán el comportamiento y las características de los objetos que creemos
+        a partir de la clase.
+
+        Para crear una clase utilizamos la palabra reservada "class", seguida del nombre del archivo que hemos creado
+        para contener a la clase. A su vez, la palabra reservada "pass" nos permitirá hacer válido el tipo de dato
+        clase para poder utilizarlo, pero está reservada para cuando la clase no tiene contenido.
+
+        Por ejemplo, si creamos un archivo de clase Persona e imprimimos el tipo de dato que es:
+
+            Archivo: Persona.py
+            class Persona:
+                pass
+
+            print(type(Persona))
+
+    ->  Creación de objetos con argumentos.
+        Para poder hacer que nuestra clase almacene atributos y métodos tenemos que inicializarla, para ello tenemos a
+        nuestra disposición el método inicializador del lenguaje: "__init__" el cual debe estar definido dentro de la
+        clase.
+
+        Nótese que el método inicializador tiene una sintaxis especial, doble guión bajo (double under score en inglés)
+        o abreviado a "dunder". Hay muchos métodos dunder en Python que están establecidos dentro del propio lenguaje,
+        iremos profundizando en su uso con el tiempo.
+
+        A través del método inicializador tenemos que recibir una referencia al objeto mismo (self). Esta variable va a
+        recibir de manera automática la referencia del objeto que estamos creando, por lo que más adelante al crear un
+        nuevo objeto de la clase no será necesario establecer una referencia hacia ésta.
+
+        De la misma manera, "self" nos servirá para crear los atributos del objeto en cuestión, para visualizar mejor
+        estos conceptos tenemos el siguiente código, en el que definimos a la clase Persona, le damos atributos en
+        código duro y los imprimimos:
+
+            class Persona:
+                def __init__(self):
+                    self.nombre = 'Juan'
+                    self.apellido = 'Pérez'
+                    self.edad = 28
+
+
+            persona1 = Persona()
+            print(persona1.nombre)
+            print(persona1.apellido)
+            print(persona1.edad)
+
+        De esta forma tenemos a la clase Persona, la cual tiene tres atributos predefinidos en código duro: Nombre,
+        Apellido y Edad. Posteriormente se crea una instancia de la clase, "persona1", la cual ya tiene una referencia
+        hacia la propia clase gracias al método dunder init, el cual nos permite almacenar los atributos que hemos
+        establecido anteriormente en la clase dentro de nuestro objeto "persona1", permitiéndonos imprimir los valores
+        de dichos atributos.
+
+        Sin embargo, establecer los atributos de una clase o de un objeto en código duro no es lo usual ni lo más
+        recomendable en ciertos casos, sino que dentro del método inicializador de la clase tenemos que establecer variables
+        de las cuales los atributos recibirán sus parámetros.
+
+            Para ello, retomando el código de la clase Persona, podemos ampliar el método dunder init para que cuando creemos
+            objetos nuevos sea necesario introducir lo que necesite la clase:
+
+            class Persona:
+                def __init__(self, nombre, apellido, edad):
+                    self.nombre = nombre
+                    self.apellido = apellido
+                    self.edad = edad
+
+
+                persona1 = Persona('Juan', 'Pérez', 28)
+                print(f'Los datos de la persona son: {persona1.nombre}, {persona1.apellido}, {persona1.edad})
+
+    ->  Creación  de más objetos de una clase.
+        De esta forma, dentro del método inicializador de la clase tenemos tres variables, de las cuales obtendremos los
+        atributos de la clase, por ello asignamos a cada atributo una variable, que deben tener el mismo nombre por
+        convención. Así mismo, esto facilita la creación de más objetos de la clase sin que tengan los mismos datos, como
+        se muestra a continuación:
+
+            class Persona:
+                def __init__(self, nombre, apellido, edad):
+                    self.nombre = nombre
+                    self.apellido = apellido
+                    self.edad = edad
+
+
+                persona1 = Persona('Juan', 'Pérez', 28)
+                print(f'Los datos de la persona son: {persona1.nombre}, {persona1.apellido}, {persona1.edad}')
+
+                persona2 = Persona('Karla', 'Gómez', 30)
+                print(f'Los datos de la persona son: {persona2.nombre}, {persona2.apellido}, {persona2.edad}')
+
+                persona3 = Persona('Sergio', 'Rodríguez', 23)
+                print(f'Los datos de la persona son: {persona3.nombre}, {persona3.apellido}, {persona3.edad}')
+
+    ->  Referencias de memoria de objetos.
+        Como hemos visto hasta ahora, los atributos que le hemos dado a cada objeto no son compartidos entre ellos, es
+        decir, podemos crear n objetos y cada uno tendrá información distinta. A nivel de memoria, esto se traduce a que
+        cada vez que se crea un nuevo objeto se reserva una dirección de memoria distinta, a la cual apuntarán tanto el
+        objeto creado como sus atributos.
+
+        Más adelante también veremos que es posible darle atributos a la clase misma, a diferencia de lo que hemos hecho
+        hasta ahora, que ha sido darle atributos a distintas instancias de la clase Persona.
+
+    ->  Modificación de atributos de un objeto.
+        Para modificar los atributos de un objeto después de haberlo creado (sin utilizar el encapsulamiento, el cual se
+        abordará más adelante), simplemente se invoca al objeto seguido del atributo que se quiera modificar, como
+        cuando se le asignaban en código duro anteriormente:
+
+            class Persona:
+                def __init__(self, nombre, apellido, edad):
+                    self.nombre = nombre
+                    self.apellido = apellido
+                    self.edad = edad
+
+
+                persona1 = Persona('Juan', 'Pérez', 28)
+                print(f'Los datos de la persona son: {persona1.nombre}, {persona1.apellido}, {persona1.edad}')
+
+                persona1.nombre = 'Fernando'
+                persona1.apellido = 'Sánchez'
+                persona1.edad = 30
+                print(f'Los datos de la persona son: {persona1.nombre}, {persona1.apellido}, {persona1.edad}')
+
+                persona2 = Persona('Karla', 'Gómez', 30)
+                print(f'Los datos de la persona son: {persona2.nombre}, {persona2.apellido}, {persona2.edad}')
+
+                persona3 = Persona('Sergio', 'Rodríguez', 23)
+                print(f'Los datos de la persona son: {persona3.nombre}, {persona3.apellido}, {persona3.edad}')
+
+        De esta forma, hemos modificado un objeto posterior a su creación, sin embargo, no es la forma correcta de
+        hacerlo, pero se profundizará en ello más adelante.
+
+    ->  Métodos de Instancia.
+        Se conocen como métodos de instancia aquellos comportamientos que le daremos a un objeto y que están definidos
+        desde la clase, facilitando el poder reutilizar el código.
+
+        Los métodos de instancia tendrán siempre una referencia de tipo "self", la cual es asignada automáticamente por
+        el lenguaje, y tienen que ser definidos en el mismo nivel de tabulación que los atributos en una clase.
+
+        Por ejemplo, anteriormente hemos definido a la clase Persona con los atributos de Nombre, Apellido y Edad, pero
+        fuera de la clase hemos declarado código para imprimir la información de cada objeto que hemos creado. Esto no
+        es algo práctico ni útil, ya que para cada objeto que creamos tenemos que cambiar el nombre de la variable que
+        apunta al objeto por cada atributo, por lo que podemos crear un método en la clase que imprima la información de
+        cada objeto de la siguiente manera:
+
+            class Persona:
+                def __init__(self, nombre, apellido, edad):
+                    self.nombre = nombre
+                    self.apellido = apellido
+                    self.edad = edad
+
+                def mostrar_info(self):
+                    print(f'La información contenida en el objeto Persona es la siguiente:\n'
+                          f'Objeto: {type(self)}\n'
+                          f'Nombre: {self.nombre}\n'
+                          f'Apellido: {self.apellido}\n'
+                          f'Edad: {self.edad}\n')
+
+
+            persona1 = Persona('Juan', 'Pérez', 28)
+            persona1.mostrar_info()
+
+            persona2 = Persona('Karla', 'Gómez', 30)
+            persona2.mostrar_info()
+
+            persona3 = Persona('Sergio', 'Rodríguez', 23)
+            persona3.mostrar_info()
+
+    ->  Más sobre "self" y Atributos de Instancia
+        El comportamiento de la palabra reservada "self" en otros lenguajes de programación, como java, está definido
+        por la palabra reservada "this", y en Python no es la excepción, ya que podemos utilizar esta palabra para
+        definir los atributos o los métodos de alguna clase y el código será igual de util. Sin embargo, se recomienda
+        utilizar únicamente "self" a la hora de trabajar con Python.
+
+        A su vez, una de las particularidades de Python es la capacidad de darle atributos a un objeto fuera de la
+        definición de la clase, por ejemplo, podemos asignarle al objeto persona1 el atributo de teléfono después de
+        crearlo, sin embargo, este atributo no será compartido por otros objetos, simplemente estará contenido en el que
+        se defina.
+
+    ->  Sección de ejercicios sobre Aritmética y Rectángulo
+
+    ->  Robusteciendo el método dunder init
+        Retomando los conceptos abordados en la Lección 7, recordamos que podemos darle argumentos variables en forma de
+        tuplas o diccionarios a una función que hayamos creado. Lo mismo pasa con el método inicializador de una clase.
+
+        Recordemos que para darle argumentos variables a una función se utilizan las siguientes notaciones:
+
+            *args       -> Tuplas
+            **kwargs    -> Diccionarios
+
+        Esto nos permite robustecer de manera significativa nuestro método inicializador si quisiéramos crear objetos
+        nuevos con más atributos.
+
+    ->  Encapsulamiento
+        Hasta ahora hemos accedido a los atributos de una clase desde fuera de esta, permitiéndonos modificarlos
+        incluso cuando hemos creado un objeto anteriormente. Sin embargo, no es algo que se deba hacer en situaciones
+        reales si queremos conservar la integridad y privacidad del código.
+
+        Aquí es donde llega el concepto de Encapsulamiento, el cual consiste en restringir el acceso a los atributos de
+        una clase desde el exterior de esta, por ejemplo, en la clase Persona hemos visto que una vez creado un objeto
+        persona1 podemos modificar uno de sus atributos, como el nombre, en otra línea de código.
+
+        Tenemos dos maneras de evitar esta modificación fuera de la creación del objeto:
+
+            1. Poner un guión bajo en el atributo contenido en el método inicializador:
+
+                class Persona:
+                    def __init__(self, nombre, apellido):
+                        self._nombre = nombre
+                        self._apellido = apellido
+
+               Sin embargo, esto no evita de ninguna manera que el atributo sea modificado más adelante, el guión bajo
+               único es una convención dentro de la comunidad para identificar un atributo al que sólo se puede acceder
+               desde la clase o la creación del objeto.
+
+           2.  Poner dos guiones bajos en el atributo contenido en el método inicializador:
+
+                class Persona:
+                    def __init__(self, nombre, apellido):
+                        self.__nombre = nombre
+                        self.__apellido = apellido
+
+                Esta notación si impide el acceso al atributo fuera de la creación de un objeto nuevo a partir de esta
+                clase, sin embargo, no es una notación que sea muy utilizada.
+
+        Para poder aplicar correctamente el concepto de encapsulamiento tenemos que tener en cuenta dos métodos que nos
+        permitirán acceder de manera indirecta a los atributos de una clase:
+
+            ->  get (obtener)
+            ->  set (establecer)
+
+        Mediante la utilización de estos métodos es que podemos darle más seguridad a las clases de nuestros programas,
+        además de que representan una buena práctica de programación, ya que no impiden totalmente que los atributos de
+        la clase se modifiquen directamente posterior a la creación de un objeto, sin embargo nos indican que tenemos
+        una manera de acceder a estos de forma correcta.
+
+        Para la creación de los métodos get y set se tienen dos DECORADORES reservados, como se muestra a continuación
+        con la clase Persona:
+
+            # Clase persona
+
+            class Persona:
+                def __init__(self, nombre, apellido, edad):
+                    self._nombre = nombre
+                    self._apellido = apellido
+                    self._edad = edad
+
+                # Método get
+                @property
+                def nombre(self):
+                    return self._nombre
+
+                # Método set
+                @nombre.setter
+                def nombre(self, nombre):
+                    self._nombre = nombre
+
+
+                def mostrar_info(self):
+                    print(f'La información contenida en el objeto Persona es la siguiente:\n'
+                          f'Objeto: {type(self)}\n'
+                          f'Nombre: {self.nombre}\n'
+                          f'Apellido: {self.apellido}\n'
+                          f'Edad: {self.edad}\n')
+
+
+            persona1 = Persona('Juan', 'Pérez', 28)
+            persona1.mostrar_info()
+
+            persona2 = Persona('Karla', 'Gómez', 30)
+            persona2.mostrar_info()
+
+            persona3 = Persona('Sergio', 'Rodríguez', 23)
+            persona3.mostrar_info()
+
+        @property determina a los métodos get y @atributo.setter determina a los métodos set.
+
+        Nota: Los métodos en get y set deben tener los mismos nombres para cada atributo, por lo que no es necesario
+        establecer una distinción en el nombre del método como "setNombre" o "getNombre", con tener en cuenta los
+        decoradores es suficiente.
+
+    ->  Atributos read-only
+        Con la finalidad de robustecer la seguridad en nuestros programas, podemos darle más privacidad a los
+        atributos de nuestras clases convirtiéndolos en atributos de solo lectura.
+
+        Para hacer esto, simplemente tenemos que omitir los métodos set para las variables que no queramos modificar,
+        de esta manera, la única forma de modificar un atributo fuera de la clase sin utilizar el método set es acceder
+        directamente al atributo, sin embargo, no es una práctica buena de programación.
+
+        De esta forma, únicamente podríamos obtener los atributos de un objeto mediante el método get, sin la
+        posibilidad de modificarlos.
+
+    ->  Encapsulamiento de todos los atributos de una clase
+        Poniendo en práctica lo que hemos visto hasta ahora, y aplicando el concepto de encapsulamiento, la clase
+        Persona quedaría de la siguiente manera con todos sus atributos encapsulados:
+
+            # Clase persona
+
+            class Persona:
+                def __init__(self, nombre, apellido, edad):
+                    self._nombre = nombre
+                    self._apellido = apellido
+                    self._edad = edad
+
+                # Métodos get
+                @property
+                def nombre(self):
+                    return self._nombre
+
+                @property
+                def apellido(self):
+                    return self._apellido
+
+                @property
+                def edad(self):
+                    return self._edad
+
+                # Métodos set
+                @nombre.setter
+                def nombre(self, nombre):
+                    self._nombre = nombre
+
+                @apellido.setter
+                def apellido(self, apellido):
+                    self._apellido = apellido
+
+                @edad.setter
+                def edad(self, edad):
+                    self._edad = edad
+
+                def mostrar_info(self):
+                    print(f'La información contenida en el objeto Persona es la siguiente:\n'
+                          f'Objeto: {type(self)}\n'
+                          f'Nombre: {self._nombre}\n'
+                          f'Apellido: {self._apellido}\n'
+                          f'Edad: {self._edad}\n')
+
+
+            persona1 = Persona('Juan', 'Pérez', 28)
+            persona1.mostrar_info()
+
+            persona2 = Persona('Karla', 'Gómez', 30)
+            persona2.mostrar_info()
+
+            persona3 = Persona('Sergio', 'Rodríguez', 23)
+            persona3.mostrar_info()
+
+        Recordar que los atributos encapsulados tienen la notación con un guión bajo antes del nombre del atributo.
+
+    ->  Uso de Módulos y Clases
+        El archivo de una Clase es un módulo en sí mismo, por lo que podemos utilizar sus propiedades desde otros
+        archivos o módulos.
+
+        Para poder utilizar las clases contenidas en un módulo desde otro externo tenemos que IMPORTAR las clases del
+        módulo en cuestión de esta manera, si creamos el módulo PruebaPersona, el cual recibirá la clase Persona del
+        módulo con el mismo nombre, tendríamos el siguiente código en la primera línea del nuevo archivo:
+
+            from Persona import Persona
+
+        Si quisiéramos utilizar más clases de un módulo externo, la sintaxis del código inicial cambia ligeramente:
+
+            from Persona import *
+
+        De tal manera que el asterisco indicará que todas las clases del módulo externo serán importadas a este.
+
+        Así mismo, el archivo PruebaPersona tiene el siguiente código:
+
+            from Persona import Persona
+
+            persona1 = Persona('Juan', 'Javier', 21)
+            persona1.mostrar_info()
+
+        De esta manera, se crea un nuevo objeto Persona en el módulo PruebaPersona, pero el código de prueba contenido
+        en el módulo Persona sigue imprimiéndose, lo cual debemos evitar, ya que es un código de prueba de la clase
+        en particular.
+
+    ->  Comprobación del Módulo Principal
+        Para evitar que el código de prueba de un módulo externo se ejecute en el módulo que estamos utilizando en el
+        momento, utilizaremos una propiedad llamada Dunder Name, que es similar en sintaxis al método Dunder Init.
+
+            print(__name__)
+
+        Esto, acompañado de un condicional if en el módulo externo, ayudará a que el código de prueba que hagamos en
+        un módulo se ejecute sólo cuando ejecutemos ese módulo.
+
+        De esta manera, tenemos la clase Persona con el código de prueba que se ejecutará únicamente cuando se compile
+        el módulo Persona:
+
+            # Clase persona
+
+            class Persona:
+                def __init__(self, nombre, apellido, edad):
+                    self._nombre = nombre
+                    self._apellido = apellido
+                    self._edad = edad
+
+                # Métodos get
+                @property
+                def nombre(self):
+                    return self._nombre
+
+                @property
+                def apellido(self):
+                    return self._apellido
+
+                @property
+                def edad(self):
+                    return self._edad
+
+                # Métodos set
+                @nombre.setter
+                def nombre(self, nombre):
+                    self._nombre = nombre
+
+                @apellido.setter
+                def apellido(self, apellido):
+                    self._apellido = apellido
+
+                @edad.setter
+                def edad(self, edad):
+                    self._edad = edad
+
+                def mostrar_info(self):
+                    print(f'La información contenida en el objeto Persona es la siguiente:\n'
+                          f'Nombre: {self.nombre}\n'
+                          f'Apellido: {self.apellido}\n'
+                          f'Edad: {self.edad}\n')
+
+
+            if __name__ == 'main':
+
+                print(f'Módulo en ejecución: {__name__}')
+
+                persona1 = Persona('Juan', 'Pérez', 28)
+                persona1.mostrar_info()
+
+                persona2 = Persona('Karla', 'Gómez', 30)
+                persona2.mostrar_info()
+
+                persona3 = Persona('Sergio', 'Rodríguez', 23)
+                persona3.mostrar_info()
+
+            # Módulo de Prueba
+
+            from Persona import Persona
+
+            print(f'Módulo en ejecución: {__name__}')
+            persona1 = Persona('Juan', 'Javier', 21)
+            persona1.mostrar_info()
+
+        Así, cuando se ejecute el módulo de prueba, no se imprimirá el código de prueba del módulo Persona, sólo cuando
+        éste último sea ejecutado desde el mismo archivo, o sea, el Módulo Principal en el momento de ejecución.
+
+    ->  Destructor de Objetos
+        Con el fin de liberar espacio en memoria de forma manual disponemos de otro método Dunder, el cual, como todos
+        los demás, está definido en la Clase Object de Python, de la cual cualquier Clase que creemos heredarán
+        cualquier método.
+
+        Si definimos el método Dunder Delete dentro de nuestra clase Persona, podemos ver qué objeto se ha borrado con
+        exactitud, de esta manera, tenemos los dos módulos que hemos utilizado hasta ahora:
+
+            # Clase persona
+
+            class Persona:
+                def __init__(self, nombre, apellido, edad):
+                    self._nombre = nombre
+                    self._apellido = apellido
+                    self._edad = edad
+
+                # Métodos get
+                @property
+                def nombre(self):
+                    return self._nombre
+
+                @property
+                def apellido(self):
+                    return self._apellido
+
+                @property
+                def edad(self):
+                    return self._edad
+
+                # Métodos set
+                @nombre.setter
+                def nombre(self, nombre):
+                    self._nombre = nombre
+
+                @apellido.setter
+                def apellido(self, apellido):
+                    self._apellido = apellido
+
+                @edad.setter
+                def edad(self, edad):
+                    self._edad = edad
+
+                def mostrar_info(self):
+                    print(f'La información contenida en el objeto Persona es la siguiente:\n'.center(50, '-'),
+                          f'Nombre: {self._nombre}'.center(50, '-'), f'\n',
+                          f'Apellido: {self._apellido}'.center(50, '-'), f'\n',
+                          f'Edad: {self._edad}'.center(50, '-'), f'\n')
+
+                def __del__(self):
+                    print(f'El Objeto {self._nombre} {self._apellido} ha sido borrado'.center(50, '-'))
+
+
+            if __name__ == 'main':
+
+                print(f'Módulo en ejecución: {__name__}'.center(50, '-'))
+
+                persona1 = Persona('Juan', 'Pérez', 28)
+                persona1.mostrar_info()
+
+                persona2 = Persona('Karla', 'Gómez', 30)
+                persona2.mostrar_info()
+
+                persona3 = Persona('Sergio', 'Rodríguez', 23)
+                persona3.mostrar_info()
+
+            # Módulo de Prueba
+
+            from Persona import Persona
+
+            print(f'Módulo en ejecución: {__name__}'.center(30, '-'))
+            persona1 = Persona('Juan', 'Javier', 21)
+            persona1.mostrar_info()
+            persona1.__del__()
+
+    ->  Herencia
+        Es una relación jerárquica por la que una o varias clases (subclases) añaden los métodos y propiedades de otra
+        clase (superclase) a sus propios métodos y propiedades. La herencia es una forma de generalización. Permite
+        agrupar métodos y propiedades comunes de cierto conjunto de clases en una superclase. Esto supone un gran ahorro
+        de tiempo en la escritura de código.
+
+        Veamos un ejemplo de Herencia:
+
+            class Persona:
+                def __init__(self, nombre, edad):
+                    self._nombre = nombre
+                    self._edad = edad
+
+            class Empleado(Persona):
+                def __init__(self, nombre, edad, sueldo):
+                    #   El método super() permite acceder a los métodos de la superclase
+                    super().__init__(nombre, edad)
+                    self._sueldo = sueldo
+
+            empleado1 = Empleado('Juan', 34, 4560)
+            print(f'Nombre: {empleado1.nombre}, Edad: {empleado1.edad}, Sueldo: {empleado1.sueldo}')
+
+        Este ejemplo no está utilizando todos los conceptos vistos anteriormente, sólo es una muestra de cómo se
+        comporta la herencia.
+
+        La superclase (Persona) hereda directamente todos los atributos y comportamientos de la clase object de Python,
+        y la subclase (Empleado), la cual estaría definida dentro del mismo archivo que Persona (en este caso), hereda
+        de la superclase, por ello se especifica en su definición.
+
+        Al momento de crear un objeto de tipo Empleado el método super().__init__ llama al método constructor de la
+        superclase para poder generar atributos que completen la construcción del nuevo objeto, por ello se tienen que
+        especificar los atributos de nombre y edad.
+
+    ->  Sobrescritura del método __str__
+        Como podemos ver, éste método es un método dunder, por lo que está definido directamente en la clase object.
+        Si definimos este método dentro de la superclase sobreescribirá al método inicializador en las subclases en las
+        que sea invocado, y como su nombre lo indica, nos permitirá utilizar la información contenida en la superclase
+        como una cadena en las subclases para poder concatenar la información.
+
+        Retomando el ejemplo anterior:
+
+            #   Persona.py
+            class Persona:
+                def __init__(self, nombre, edad):
+                    self._nombre = nombre
+                    self._edad = edad
+
+                def __str__(self):
+                    return f'Objeto: {type(self)}\n' \
+                           f'Nombre: {self._nombre}\n' \
+                           f'Edad: {self._edad}\n'
+
+
+            class Empleado(Persona):
+                def __init__(self, nombre, edad, sueldo):
+                    super().__init__(nombre, edad)
+                    self._sueldo = sueldo
+
+                def __str__(self):
+                    return f'{super().__str__()}\n' \
+                           f'Sueldo: {self._sueldo}\n'
+
+            #   ClientePersona.py
+            from Persona import *
+
+            persona1 = Persona('Juan', 23)
+            print(persona1)
+
+            empleado1 = Empleado('Javier', 24, 5600)
+            print(empleado1)
+
+        Con este ejemplo podemos ver que la sobrescritura del método dunder str nos permite imprimir la información
+        contenida en un objeto como una cadena en lugar de la dirección de memoria donde éste se encuentra alojado en el
+        momento de la ejecución, por lo que resulta una opción muy útil para el manejo de la información.
+
+        De la misma forma, podemos ver que el mismo método es sobrescrito en la clase Empleado, la cual hereda
+        directamente de Persona, para poder concatenar el parámetro del sueldo junto con la información ya contenida en
+        la clase Persona.
+
+        Ejercicio:
+        Definir una superclase llamada Vehiculo y dos subclases llamadas Coche y Bicicleta, las cuales heredan de la
+        superclase.
+
+        Las clases deben tener los siguientes atributos y métodos:
+
+            ->  Vehiculo (Superclase):
+                Atributos: color, ruedas
+                Métodos: __init()__ y __str__
+
+            ->  Coche (Subclase):
+                Atributos: velocidad (km/h)
+                Métodos: __init()__, __str__
+
+            ->  Bicicleta (Subclase):
+                Atributos: tipo (urbana, montaña)
+                Métodos: __init()__, __str__
