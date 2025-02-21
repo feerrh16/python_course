@@ -1,0 +1,198 @@
+Sergio Fernando Rodríguez Hernández
+Curso de Udemy: Universidad de Python - POO, PySide, Tkinter, Django y Flask!
+Tema: Funciones
+
+Notas de la lección:
+    → ¿Qué es una función?
+        Una función es un bloque de código que podemos invocar tantas veces como se desee. Podemos crear una función
+        dentro del archivo principal e invocarla más adelante en el mismo o puede ser creada en otro archivo e importada
+        al principio del archivo en el cual se quiera utilizar. Este concepto será profundizado más adelante.
+
+        Para crear una función se utiliza la palabra reservada "def", seguida del nombre que se le quiera asignar a la
+        función en cuestión. De la misma manera que con las variables, es una buena práctica definir nuestras funciones
+        de alguna de las siguientes formas:
+
+            Palabras en minúsculas separadas por guiones bajos. Por ejemplo: my_function_in_python
+
+            Todas las palabras seguidas y en minúsculas y con la primera letra de la primera palabra en minúscula y la
+            primera letra de las siguientes palabras en mayúsculas. Por ejemplo: myFunctionInPython.
+
+        Un ejemplo simple de la definición de una función es el siguiente código, el cual define una función que imprime
+        un mensaje y después puede ser invocada tantas veces como sea deseado:
+
+            def mensajeBienvenida():
+                print("Primera definición de función")
+
+            mensajeBienvenida()
+
+        Al igual que con los ciclos, todo el código que esté después del tabulado de los dos puntos estará definido
+        dentro de la función.
+
+    → Paso de argumentos en una función.
+        Un parámetro es aquella variable dinámica que vamos a establecer dentro de nuestra función para que al momento
+        de invocarla más adelante en el código, podamos ingresar información a esta.
+
+        Cuando se invoca una función, ya declarada anteriormente, la información que le pasamos se conoce como
+        argumento, de manera que la diferencia entre parámetro y argumento es meramente técnica, siendo el parámetro la
+        parte variable de la función y el argumento el valor o dato que se le asigna una vez que la invocamos.
+
+        El siguiente código es un ejemplo simple de cómo funcionan los parámetros y los argumentos de una función:
+
+            def miembrosAkatsuki(nombre, aldea, estado):
+                print(f"Nombre: {nombre}")
+                print(f("Aldea de origen: {aldea}")
+                print(f("Estado: {estado}")
+                print()
+
+            miembrosAkatsuki("Uchiha, Obito", "Konohagakure", "Muerto")
+            miembrosAkatsuki("Zetsu", "Sin Origen", "Incapacitado")
+            miembrosAkatsuki("Hoshigaki Kisame", "Kirigakure", "Muerto")
+            miembrosAkatsuki("Konan", "Amegakure", "Muerta")
+            miembrosAkatsuki("Uzumaki, Nagato", "Amegakure", "Muerto")
+            miembrosAkatsuki("Uchiha, Itachi", "Konohagakure", "Muerto")
+            miembrosAkatsuki("Deidara", "Iwagakure", "Muerto")
+            miembrosAkatsuki("Kakuzu", "Takigakure", "Muerto")
+            miembrosAkatsuki("Hidan", "Yugakure", "Incapacitado")
+            miembrosAkatsuki("Sasori", "Sunagakure", "Muerto")
+
+    → Palabra Return en funciones.
+        Cuando definimos una función tenemos dos opciones para regresar el resultado de las operaciones realizadas por
+        la misma, la primera es asignar los resultados a una nueva variable, o utilizar la palabra reservada "return",
+        la cual por sí misma tiene la propiedad de regresar el valor en cada línea de código donde sea invocada la
+        función.
+
+        Ejemplo:
+
+            def suma(A, B):
+                return A + B
+
+            res_suma = suma(10, 40)
+            print(f"El resultado de sumar {A} y {B} es: {res_suma}")
+
+    → Valores por Default en los parámetros de una función
+        Como hemos visto antes, cuando invocamos una función sin ningún parámetro, por ejemplo, la función suma del
+        tema anterior, y compilamos el programa, tendremos un error debido a que el compilador requiere de los
+        parámetros que le hemos dado a la función para poder funcionar.
+
+        Para solucionar esto, y para agregar una capa de "seguridad" a nuestro programa en caso de que una función no
+        deba ser utilizada en algún momento, pero se requiera de su presencia, podemos inicializar los valores de los
+        parámetros dentro de la función, de manera que si la invocamos y no le pasamos ningún parámetro, el compilador
+        no se detenga en su tarea.
+
+        Ejemplo:
+
+            def suma(A = 0, B = 0):
+                return A + B
+
+            res_suma = suma()
+            print(f"El resultado de la suma es: {res_suma}")
+
+        De esta manera, si compilamos el programa, no se verá afectado el funcionamiento por invocar a la función sin
+        darle ningún parámetro. Esto será más importante conforme se lleguen a temas más complejos.
+
+    → Argumentos variables en Funciones
+        Cuando no conocemos el número de argumentos que se le pasarán a una función, podemos definirla de manera que
+        tenga un número variable de argumentos. Al momento de definir una función con argumentos variables, Python
+        convertirá a la variable en la que se almacenan los datos en una tupla. Para establecer una variable que
+        almacenará un número variable de argumentos, se utiliza el asterisco antes del nombre de la variable.
+
+        Ejemplo:
+
+            def listaNombres(*nombres):
+                for nombre in nombres:
+                    print(nombre)
+
+            listaNombres = ("Juan", "Karla", "María", "Ernesto")
+            listaNombres = ("María", "Carlos")
+
+        El código del ejemplo iterará la ahora tupla que almacena datos de tipo string aunque la función sea invocada
+        más veces y se le pasen más parámetros, imprimiendo una lista de nombres.
+
+    → Argumentos llave-valor
+        De la misma manera que los argumentos variables, los cuales convierten una variable establecida en una tupla
+        para almacenar 'n' número de datos en ella a través de una función, podemos definir a los argumentos llave-valor
+        como una variable definida dentro de una función, la cual tendrá en principio un número indeterminado de datos
+        en ella, convertida en un diccionario. Por ello, este tipo de argumentos están nombrados como "llave-valor".
+
+        Al igual que en *args, en **kwargs el nombre es una mera convención entre los usuarios de Python.
+        Puedes usar cualquier otro nombre siempre y cuando respetes el **.
+
+        Ejemplo:
+            def ingresar_terms(**kwargs):
+                for llave, valor in kwargs.items():
+                    print(f'{llave}: {valor}')
+
+            ingresar_terms(IDE='Integrated Development Environment', PK='Primary Key')
+            ingresar_terms(DBMS='Database Management System')
+
+    → Distintos tipos de datos como argumentos
+        Como hemos visto hasta ahora, realmente podemos hacer que los parámetros pasados por una función sean cualquier
+        tipo de dato como tuplas (*args), diccionarios (**kwargs), y en este caso, una lista. Para manejar un parámetro
+        de una función como una lista, podemos definirla de la siguiente manera.
+
+        Ejemplo:
+            def miembros_equipo(nombres):
+                for nombre in nombres:
+                    print(nombre)
+
+            nombres = ['Juan', 'Karla', 'Guillermo']
+            desplegarNombres(nombres)
+            desplegarNombres('Carlos')
+            desplegarNombres((8, 9))
+            desplegarNombres([10, 11])
+
+        De esta forma podemos iterar una lista de elementos pasada como parámetro de una función. Para el caso de la
+        lista de nombres, se imprimen uno seguido del siguiente hasta llegar al final, pero en el caso de listar un solo
+        nombre, el ciclo iterará los caracteres de este, ya que es un dato de tipo string.
+
+        Sin embargo, si quisiéramos iterar una lista de elementos no iterables, como números, tendríamos que
+        establecerlos dentro de una tupla (si tuviéramos un solo elemento) o dentro de otra lista (de manera más
+        explícita)
+
+    → Funciones recursivas
+        La recursividad o recursión es un concepto matemático que cuando se aplica a la programación nos permite
+        resolver problemas o tareas donde las mismas pueden ser divididas en subtareas cuya funcionalidad es la misma.
+        Dado que los subproblemas a resolver son de la misma naturaleza, se puede usar la misma función para
+        resolverlos. Dicho de otra manera, una función recursiva es aquella que está definida en función de sí misma,
+        por lo que se llama repetidamente a sí misma hasta llegar a un punto de salida.
+
+        Cualquier función recursiva tiene dos secciones de código claramente divididas:
+
+            1.  La sección en la que la función se llama a sí misma.
+            2.  Tiene que existir siempre una condición en la que la función retorna sin volver a llamarse.
+                Es muy importante porque de lo contrario, la función se llamaría de forma indefinida.
+
+        Uno de los ejemplos más usados para entender la recursividad es el cálculo del factorial de un número (n!). El
+        factorial de un número 'n' se define como la multiplicación de todos sus números predecesores hasta llegar a
+        uno. Por lo tanto, 5!, sería 5*4*3*2*1.
+
+        Utilizando un enfoque tradicional no recursivo, podríamos calcular el factorial de la siguiente manera.
+
+            def factorial_normal(n):
+                r = 1
+                i = 2
+                while i <= n:
+                    r *= 1
+                    i += 1
+                return r
+
+            factorial_normal(5) # = 5! = 120
+
+        Dado que el factorial es una tarea que puede ser dividida en subtareas del mismo tipo (multiplicaciones),
+        podemos darle un enfoque recursivo y escribir la función de otra manera.
+
+            def factorial_recursivo(n):
+                if n == 1:
+                    return 1
+                else:
+                    return n * factorial_recursivo(n - 1)
+
+            factorial_recursivo(5) # 5! = 120
+
+        Lo que realmente hacemos con el código anterior es llamar a la función factorial_recursivo() múltiples veces.
+        Es decir, 5! es igual a 5*4 y 4! es igual a 4*3! y así recursivamente hasta llegar a 1.
+
+        Algo muy importante a tener en cuenta es que si realizamos demasiadas llamadas a la función, podríamos llegar a
+        tener un error del tipo RecursionError. Esto se debe a que todas las llamadas van apilándose y creando un
+        contexto de ejecución, algo que podría llegar a causar un stack overflow. Es por eso por lo que Python lanza ese
+        error, para protegernos de llegar a ese punto.

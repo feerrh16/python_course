@@ -1,0 +1,210 @@
+Sergio Fernando Rodríguez Hernández
+Curso de Udemy: Universidad de Python - POO, PySide, Tkinter, Django y Flask!
+Tema: Colecciones
+
+Notas de la lección:
+    → Listas
+        Una lista es un conjunto de elementos. Podemos tener cualquier tipo de dato, existente en Python dentro de una
+        lista. Por ejemplo, declaramos una variable llamada "Nombres", la cual contiene una referencia hacia una lista,
+        la cual contiene un número determinado de elementos con un índice determinado para cada uno.
+
+        Es importante estar familiarizados con el índice de cada elemento, pues esto nos va a permitir realizar las
+        distintas operaciones, como eliminar o consultar elementos, dentro de la lista.
+
+        Ejemplo de una lista y las distintas operaciones que se le pueden realizar:
+
+            # Definición de una lista de elementos de tipo str
+            nombres = ["Juan", "Karla", "Ricardo", "María"]
+
+            # Imprimir la lista nombres
+            print(nombres)
+
+            # Acceder a los elementos de una lista (por índice)
+            print(nombres[0])
+            print(nombres[1])
+
+            # Acceder a los elementos de una lista (por índice en orden inverso)
+            print(nombres[-1])  # María
+            print(nombres[-2])  # Ricardo
+
+            # Imprimir un rango de la lista (No se incluye el último índice, es como aplicar un menor que)
+            print(nombres[0:2])
+
+            # Imprimir desde el primer índice de la lista hasta otro deseado (sin incluirlo)
+            print(nombres[:3])
+
+            # Imprimir desde el índice indicado hasta el final
+            print(nombres[1:])
+
+            # Cambiar un elemento de la lista mediante el índice
+            nombres[3] = "Ivonne"
+
+            # Iterar una lista
+            for nombre in nombres:
+                print(nombre)
+            else:
+                print("La lista no contiene más nombres")
+
+            # Imprimir el número de elementos contenidos en la lista (función len)
+            print(len(nombres))
+
+            # Agregar un elemento al final de la lista (función append)
+            nombres.append("Lorenzo")
+            print(nombres)
+
+            # Insertar un elemento a la lista en un índice determinado (función insert)
+            nombres.insert(1, "Octavio")
+            print(nombres)
+
+            #Remover un elemento de la lista (función remove)
+            nombres.remove("Octavio")
+            print(nombres)
+
+            # Remover el último elemento de una lista (función pop)
+            nombres.pop()
+            print(nombres)
+
+            # Eliminar un índice (función del)
+            del nombres[0]
+            print(nombres)
+
+            # Remover todos los elementos de la lista (función clear)
+            nombres.clear()
+            print(nombres)
+
+            # Eliminar por completo la lista de la memoria (función del)
+            del nombres
+
+    → Tuplas
+        Una tupla es, básicamente, una lista de elementos que no podemos modificar, de manera que no podemos agregar,
+        extraer o modificar un dato almacenado en una variable tipo tupla.
+
+        La sintaxis de definición de una tupla es prácticamente idéntica a la de una lista. Para el caso de una tupla
+        sus elementos estarán contenidos dentro de paréntesis.
+
+        Cabe resaltar que la única manera de modificar los datos contenidos en una tupla es realizando una conversión
+        de tipo de dato tuple a list (esta conversión se muestra en el ejemplo de abajo).
+
+        Ejemplo de una tupla y las distintas operaciones que se le pueden realizar:
+
+            # Definición de una tupla
+            frutas = ("Naranja", "Plátano", "Guayaba")
+            print(frutas)
+            # Para definir una tupla que contenga un solo elemento, se le agrega una coma después del primer dato. En
+            el caso de esta tupla, sería: frutas = ("Naranja", )
+
+            # Imprimir el número de elementos que contiene la tupla (función len)
+            print(len(frutas))
+
+            # Imprimir un elemento de la tupa mediante el índice en orden
+            print(frutas[0])
+
+            # Imprimir un elemento de la tupla mediante el índice en orden inverso
+            print(frutas[-1])
+
+            # Imprimir un rango de datos de la tupla (sin incluir el último índice)
+            print(frutas[0:2])
+
+            # Iterar los elementos de la tupla
+            for fruta in frutas:
+                print(fruta, end = ", ")
+                print()
+                """ Dentro de los parámetros de la función print podemos agregar un carácter al final de la impresión.
+                De manera que la iteración de esta tupla estaría impresa en una sola línea y separada por comas."""
+
+            # Modificar un dato en la tupla (Conversión de tipo mediante funciones list y tuple)
+            ListaFrutas = list(frutas)
+            ListaFrutas[0] = "Pera"
+            frutas = tuple(ListaFrutas)
+            print("\n", frutas)
+            """ De la misma manera que con el parámetro end dentro de la función print, podemos agregar un carácter
+            antes de cada línea impresa."""
+
+            # Eliminar la tupla de la memoria (función del)
+            del frutas
+
+    → Set
+        A diferencia de las Listas o Tuplas, un Set no mantiene un orden en sus datos, de manera que si imprimimos el
+        contenido de este, se mostrará en un orden distinto cada vez. Asimismo, un Set no permite el almacenamiento de
+        datos iguales, por lo que nunca tendrá datos duplicados. Al no mantener un orden, los datos almacenados dentro
+        de un Set no están identificados con índices.
+
+        Las operaciones que podemos realizar sobre un Set están limitadas a la inserción de elementos, su eliminación y
+        el borrado del Set de la memoria.
+
+        Ejemplo de un Set y las distintas operaciones que se le pueden realizar:
+
+            # Definición de un Set
+            planetas = {"Marte", "Júpiter", "Venus"}
+
+            # Imprimir el número de elementos contenidos en el Set (función len)
+            print(len(planetas))
+
+            # Revisión de la presencia de un elemento en el Set (funciona con Listas y Tuplas. Arroja True/False)
+            print("Marte" in planetas)      # True
+            print("Mercurio" in Planetas)   # False
+
+            # Agregar un elemento al Set (Función add. No se pueden agregar dos elementos iguales)
+            planetas.add("Tierra")
+
+            # Eliminar un elemento del Set (Función remove. Si el elemento no está presente, da error de compilación)
+            planetas.remove("Marte")
+
+            # Eliminar un elemento del Set (Función discard. Si el elemento no está presente, no da ningún error)
+            planetas.discard("Marte")
+
+            # Limpiar el contenido del Set (Función clear)
+            planetas.clear()
+
+            # Borrar el Set de la memoria
+            del planetas
+
+    → Diccionarios
+        Por último, tenemos a los Diccionarios, los cuales son una colección de elementos identificables mediante una
+        clave (key) y un valor (value). Al igual que con un Set, los elementos contenidos dentro del Diccionario no
+        tienen un índice identificador para poder acceder a este, para ello utilizamos la clave con la que hemos
+        definido un elemento.
+
+        Ejemplo de un Diccionario y las distintas operaciones que se le pueden realizar:
+
+            # Definición de un Diccionario
+            diccionario = {
+                "IDE"   : "Integrated Development Environment",
+                "OOP"   : "Object Oriented Programming",
+                "DBMS"  : "Database Management System"
+            }
+
+            # Imprimir el número de elementos contenidos en un Diccionario (función len)
+            print(len(diccionario))
+
+            # Imprimir un elemento del Diccionario (función get)
+            print(diccionario["IDE"]
+            print(diccionario.get["OOP"]
+
+            # Modificar elementos del diccionario
+            diccionario["IDE"] = "integrated development environment"
+
+            # Iterar los elementos de un diccionario (función items, función key, función values)
+            for termino, valor in diccionario.items():
+                print(termino, valor)
+
+            for termino in diccionario.keys():
+                print(termino)
+
+            for valor in diccionario.values():
+                print(valor)
+
+            # Comprobar la existencia de un elemento del Diccionario
+            print("IDE" in diccionario)
+
+            # Agregar un elemento al Diccionario
+            diccionario["PK"] = "Primary Key"
+
+            # Extraer un elemento del diccionario (función pop)
+            diccionario.pop("DBMS")
+
+            # Limpiar todos los elementos del Diccionario (función clear)
+            diccionario.clear()
+
+            # Borrar el diccionario de la memoria (función del)
+            del diccionario

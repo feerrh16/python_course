@@ -1,0 +1,72 @@
+Sergio Fernando Rodríguez Hernández
+Curso de Udemy: Universidad de Python - POO, PySide, Tkinter, Django y Flask!
+Tema: Operadores
+
+Notas de la lección:
+    → Operadores aritméticos: 
+    Suma, resta, multiplicación, división, división entera (//),
+    exponenciación (**) y módulo o residuo (%). Primera sección del código: Programa que solicite
+    dos o más operandos al usuario y que realice las operaciones disponibles.
+
+    Interpolación: Incluir variables en una cadena. Por ejemplo: Se tiene el siguiente código que,
+    mediante dos operandos, da el resultado de una suma.
+
+        OperandoA = 3
+        OperandoB = 2
+
+        suma = operandoA + operandoB
+
+        # Imprimiendo el resultado con un mensaje, seguido de la variable
+        print("El resultado de la suma es:", suma)
+
+        # Interpolando: f nos indica el formato. La variable que deseamos imprimir va entre llaves.
+        print(f'El resultado de la suma es: {suma}')
+
+    Poner en práctica a partir de hoy la interpolación para imprimir cadenas con variables.
+
+    → Operadores de asignación: Cuando declaramos una variable, el símbolo de igualdad (=) nos permite
+    dale o asignarle un valor a esta variable.
+
+    Para reasignarle un valor a cierta variable, podemos invocarla en otra sección del código y asignarle
+    alguna operación que modifique su valor inicial. Por ejemplo:
+
+        Var1 = 23
+        print(Var1)
+
+        ...
+
+        Var1 **= 4
+
+    En este caso, el valor inicial de la variable Var1 es de 23, pero más adelante en el código se le
+    reasignará un valor equivalente a exponenciar su valor inicial a la cuarta potencia. La sintaxis es
+    prácticamente idéntica a cuando se realiza la reasignación de una variable en C
+
+    → Operadores de comparación: Nos permiten saber si dos valores son iguales o distintos y arrojan un valor
+    Booleano.
+    Los operadores de comparación son los siguientes:
+
+        == → Equivalencia
+
+        != → Inequivalencia
+
+        > → Mayor que
+
+        >= → Mayor o igual que
+
+        < → Menor que
+
+        <= → Menor o igual que
+
+    → Operadores Lógicos: En Python podemos encontrar los siguientes operadores lógicos:
+
+        And: Devuelve True si ambos operandos son True. Ejemplo: a and b.
+
+        Or: Devuelve True si alguno de los operandos es True. Ejemplo: a or b.
+
+        Not: Devuelve True si alguno de los operandos es False. Ejemplo: not a.
+
+Ejecutar un script python desde cmd:
+    1.  Abrir cmd y copiar la dirección de la carpeta que contiene el script.
+    2.  Escribir python, seguido del nombre del archivo. Ejemplo:
+
+        python rectangulo.py

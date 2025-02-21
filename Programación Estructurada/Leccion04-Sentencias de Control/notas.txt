@@ -1,0 +1,105 @@
+Sergio Fernando Rodríguez Hernández
+Curso de Udemy: Universidad de Python - POO, PySide, Tkinter, Django y Flask!
+Tema: Sentencias de Control
+
+Notas de la lección:
+    → Sentencia If/Else.
+        Permite seleccionar un camino u otro en un algoritmo, dependiendo de lo que suceda. El algoritmo está
+        compuesto por un inicio, una expresión booleana (if) con sus dos casos, True y False, de las cuales
+        se desprenden dos sentencias, una por cada caso, y un final después de haber sido cumplida alguna de
+        las sentencias.
+
+        Ejemplo de una sentencia If/Else:
+
+            condition = True
+
+            if condition:
+                print("Condición verdadera")
+            else:
+                print("Condición falsa")
+
+        Realmente no importa si la variable condition no tiene un valor Booleano (True/False). Mientras tenga un
+        valor distinto de vacío (null) la sentencia If dará un resultado verdadero. Más adelante se profundizará
+        en qué valores están dentro de True o False.
+
+        Dentro de este tema también podemos encontrar a la sentencia elif, la cual nos permite agregar más
+        condiciones al código antes de else. Por ejemplo, el programa de operaciones Booleanas de la lección pasada
+        nos permite ver con más detalle el funcionamiento de esta sentencia:
+
+            """
+            Sergio Fernando Rodríguez Hernández
+            Curso de Udemy: Universidad de Python - POO, PySide, Tkinter, Django y Flask!
+            Tema: Operadores
+
+            Código → Programa que realiza las operaciones lógicas AND, OR y NOT
+            """
+
+            a = (input("Ingrese un valor Booleano (True/False) para la variable a: "))
+            b = (input("Ingrese un valor Booleano (True/False) para la variable b: "))
+            print()
+
+            if a == "True" and b == "True":
+                a = True
+                b = True
+            elif a == "True" and b == "False":
+                a = True
+                b = False
+            elif a == "False" and b == "True":
+                a = False
+                b = True
+            elif a == "False" and b == "False":
+                a = False
+                b = False
+
+            else:
+                print("Ingrese un valor Booleano válido.")
+
+            # Operaciones Lógicas
+            AND = a and b
+            OR = a or b
+            NOT_A = not a
+            NOT_B = not b
+
+            # Resultados
+            print("Resultados de las operaciones lógicas.")
+            print()
+
+            print(f"La operación lógica a y b (a and b) tiene un valor: {AND}")
+            print(f"La operación lógica a o b (a or b) tiene un valor: {OR}")
+            print(f"La operación lógica negación de a (not a) tiene un valor: {NOT_A}")
+            print(f"La operación lógica negación de b (not b) tiene un valor: {NOT_B}")
+
+        El código de este programa nos permite identificar los distintos inputs que el usuario introduzca al
+        programa con tal de verificar las operaciones lógicas disponibles. Se contemplan todos los casos para
+        las combinaciones de las variables a y b, y en caso de que el usuario introduzca una cadena que no
+        contempla el programa, se manda un aviso para que introduzca un valor Booleano válido.
+
+    → Modo Debug.
+        El modo Debug nos permite ejecutar cualquier programa paso a paso, para verificar su correcto funcionamiento.
+        Para ejecutar el modo Debug se hace clic en la barra izquierda que indica el número de línea en la que se
+        está trabajando. Posteriormente, se da clic en el ícono a la derecha de Run.
+
+        Se desplegará una ventana en la parte inferior del IDE, en la cual podemos comprobar paso a paso cómo funciona
+        el código que estamos realizando, utilizando el botón Step Over.
+
+        Es importante tener el Debug muy presente para el futuro, ya que nos ayudará a verificar el funcionamiento de
+        programas más complejos.
+
+    → Operador Ternario (If/Else simplificado)
+        El Operador Ternario es una sintaxis simplificada de una sentencia If/Else, pero es recomendable usarla solo
+        para sentencias muy cortas, por ejemplo:
+
+            condition = True
+
+            if condition:
+                print("Condición verdadera")
+            else:
+                print("Condición falsa")
+
+        Como puede verse, este código es muy simple, por lo que utilizando el operador ternario podríamos reducirlo
+        a una sola línea de código, tal que:
+
+                    print("Condición verdadera") if condition else print("Condición falsa")
+
+        Esta sintaxis es útil para algunos casos, sin embargo, para código más robusto es mejor utilizar la sintaxis
+        que hemos utilizado hasta ahora, ya que el Operador Ternario no puede contemplar la instrucción Elif.

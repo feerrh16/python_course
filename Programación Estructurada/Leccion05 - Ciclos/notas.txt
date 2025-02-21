@@ -1,0 +1,64 @@
+Sergio Fernando Rodríguez Hernández
+Curso de Udemy: Universidad de Python - POO, PySide, Tkinter, Django y Flask!
+Tema: Ciclos
+
+Notas de la lección:
+    → Ciclo while.
+        Este ciclo consiste en una condición, la cual es revisada y mientras se cumpla, ejecuta el código a repetir. En
+        caso contrario, el ciclo llega a su fin. Este ciclo nos permite repetir una sección de código hasta que deje de
+        cumplirse la condición que lo activa.
+
+        Ejemplo de un ciclo while:
+
+            contador = 0
+
+            while contador < 3:
+                print(contador)
+                contador += 1
+            else:
+                print("Fin del ciclo while")
+
+    → Ciclo for.
+        Nos permite iterar una lista de datos o una lista de elementos.
+
+        Ejemplo de un ciclo for:
+
+            Cadena = "Hola"
+
+            for Letra in Cadena:
+                print(Letra)
+            else:
+                print("Fin del ciclo")
+
+    → Break.
+        Esta palabra reservada nos permite romper un ciclo apenas se cumpla la condición que lo activa. Por ejemplo,
+        el siguiente ciclo for imprime un mensaje cada vez que se encuentra la leta "a" en la palabra "Holanda".
+
+            for letra in "Holanda":
+                if letra == "a":
+                    print(f"Letra encontrada: {letra}")
+            else:
+                print("Fin del ciclo")
+
+        Si dejamos el código tal y como está, se imprimirán dos mensajes, uno por cada letra "a" presente en la palabra,
+        pero si agregamos un break dentro del ciclo for, este se detendrá una vez haya encontrado la primera letra:
+
+            for letra in "Holanda":
+                if letra == "a":
+                    print(f"Letra encontrada: {letra}")
+                    break
+            else:
+                print("Fin del ciclo")
+
+        Para este caso, el ciclo se detendrá completamente cuando encuentre la primera letra, por lo que el mensaje que
+        indica el fin del ciclo no se imprimirá.
+
+    → Continue.
+        Esta palabra reservada nos permite pasar a la siguiente iteración dentro del ciclo y las líneas de código que
+        estén después de la condición no se ejecutarán. Podemos ver un ejemplo de esto en el siguiente código que
+        imprime los números pares dentro de un rango.
+
+            for i in range(6):
+                if i % 2 != 0:
+                    continue
+                print(f"Valor: {i}")
