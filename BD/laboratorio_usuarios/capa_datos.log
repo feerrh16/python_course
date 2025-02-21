@@ -1,0 +1,903 @@
+02:31:42 PM: DEBUG
+[logger_base.py: 12]
+Mensaje a nivel debug
+02:31:42 PM: INFO
+[logger_base.py: 13]
+Mensaje a nivel info
+02:31:42 PM: WARNING
+[logger_base.py: 14]
+Mensaje a nivel warning
+02:31:42 PM: ERROR
+[logger_base.py: 15]
+Mensaje a nivel error
+02:31:42 PM: CRITICAL
+[logger_base.py: 16]
+Mensaje a nivel crítico
+02:32:29 PM: DEBUG
+[logger_base.py: 12]
+Mensaje a nivel debug
+
+02:32:29 PM: INFO
+[logger_base.py: 13]
+Mensaje a nivel info
+
+02:32:29 PM: WARNING
+[logger_base.py: 14]
+Mensaje a nivel warning
+
+02:32:29 PM: ERROR
+[logger_base.py: 15]
+Mensaje a nivel error
+
+02:32:29 PM: CRITICAL
+[logger_base.py: 16]
+Mensaje a nivel crítico
+
+02:33:30 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x0000026310C7E1E0>
+
+02:33:30 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x0000026311035690; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+02:33:30 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x0000026311035690; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+02:36:15 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+02:36:15 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x000001C8E1DB6C00>
+
+02:36:15 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x000001C8E397D7A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+02:36:15 PM: DEBUG
+[CursorDelPool.py: 28]
+Dentro del bloque with
+
+02:36:15 PM: DEBUG
+[CursorDelPool.py: 30]
+[(1, 'jperez', '123456'), (2, 'kgomez', '789123')]
+
+02:36:15 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+02:36:15 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+02:36:15 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x000001C8E397D7A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+02:46:00 PM: DEBUG
+[Usuario.py: 43]
+
+        ID: 1
+        Nombre de usuario: eacrespo
+        Contraseña: 3acr3sp0
+        
+
+02:46:00 PM: DEBUG
+[Usuario.py: 47]
+
+        ID: None
+        Nombre de usuario: eacrespo
+        Contraseña: 3acr3sp0
+        
+
+03:00:40 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+03:00:40 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x000001B3A7757AD0>
+
+03:00:40 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x000001B3A931D8B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:00:40 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+03:00:40 PM: ERROR
+[CursorDelPool.py: 19]
+Ocurrió una excepción, rollback realizado:
+duplicate key value violates unique constraint "usuario_pkey"
+DETAIL:  Key (id_usuario)=(1) already exists.
+ <class 'psycopg2.errors.UniqueViolation'> <traceback object at 0x000001B3A93AB740>
+
+03:00:40 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x000001B3A931D8B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:01:18 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+03:01:18 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x0000019B33CFB980>
+
+03:01:18 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x0000019B35B498B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:01:18 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+03:01:18 PM: ERROR
+[CursorDelPool.py: 19]
+Ocurrió una excepción, rollback realizado:
+duplicate key value violates unique constraint "usuario_pkey"
+DETAIL:  Key (id_usuario)=(2) already exists.
+ <class 'psycopg2.errors.UniqueViolation'> <traceback object at 0x0000019B35BD9740>
+
+03:01:18 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x0000019B35B498B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:02:15 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+03:02:16 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x000002064BAEB980>
+
+03:02:16 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x000002064D9B98B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:02:16 PM: DEBUG
+[UsuarioDAO.py: 28]
+Registro insertado en la Base de Datos:
+
+        ID: 3
+        Nombre de usuario: absenta_oficial
+        Contraseña: 4bs3nt4
+        
+
+03:02:16 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+03:02:16 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+03:02:16 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x000002064D9B98B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:02:16 PM: DEBUG
+[UsuarioDAO.py: 52]
+Registro insertado en la Base de Datos:
+1
+
+03:02:16 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+03:02:16 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x000002064D9B98B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:02:16 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+03:02:16 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+03:02:16 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x000002064D9B98B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:02:16 PM: DEBUG
+[UsuarioDAO.py: 57]
+
+        ID: 1
+        Nombre de usuario: jperez
+        Contraseña: 123456
+        
+
+03:02:16 PM: DEBUG
+[UsuarioDAO.py: 57]
+
+        ID: 2
+        Nombre de usuario: kgomez
+        Contraseña: 789123
+        
+
+03:02:16 PM: DEBUG
+[UsuarioDAO.py: 57]
+
+        ID: 3
+        Nombre de usuario: absenta_oficial
+        Contraseña: 4bs3nt4
+        
+
+03:03:55 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+03:03:55 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x000002487B6BB980>
+
+03:03:55 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x000002487D5498B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:03:55 PM: DEBUG
+[UsuarioDAO.py: 28]
+Registro insertado en la Base de Datos:
+
+        ID: None
+        Nombre de usuario: SirRinoceronte
+        Contraseña: r1n0c3r0nt3
+        
+
+03:03:55 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+03:03:57 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+03:03:57 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x000002487D5498B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:03:57 PM: DEBUG
+[UsuarioDAO.py: 52]
+Registro insertado en la Base de Datos:
+1
+
+03:03:57 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+03:03:57 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x000002487D5498B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:03:57 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+03:03:57 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+03:03:57 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x000002487D5498B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+03:03:57 PM: DEBUG
+[UsuarioDAO.py: 57]
+
+        ID: 1
+        Nombre de usuario: jperez
+        Contraseña: 123456
+        
+
+03:03:57 PM: DEBUG
+[UsuarioDAO.py: 57]
+
+        ID: 2
+        Nombre de usuario: kgomez
+        Contraseña: 789123
+        
+
+03:03:57 PM: DEBUG
+[UsuarioDAO.py: 57]
+
+        ID: 3
+        Nombre de usuario: absenta_oficial
+        Contraseña: 4bs3nt4
+        
+
+03:03:57 PM: DEBUG
+[UsuarioDAO.py: 57]
+
+        ID: 4
+        Nombre de usuario: SirRinoceronte
+        Contraseña: r1n0c3r0nt3
+        
+
+04:02:21 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+04:02:22 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x000001D5BF425E80>
+
+04:02:22 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x000001D5BF4357A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:02:22 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+04:02:22 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+04:02:22 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x000001D5BF4357A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:03:48 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+04:03:48 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x000001C8418A6BA0>
+
+04:03:48 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x000001C8434B57A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:03:48 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+04:03:48 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+04:03:48 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x000001C8434B57A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:03:48 PM: DEBUG
+[MenuAppUsuario.py: 19]
+
+        ID: 1
+        Nombre de usuario: jperez
+        Contraseña: 123456
+        
+
+04:03:48 PM: DEBUG
+[MenuAppUsuario.py: 19]
+
+        ID: 2
+        Nombre de usuario: kgomez
+        Contraseña: 789123
+        
+
+04:03:48 PM: DEBUG
+[MenuAppUsuario.py: 19]
+
+        ID: 3
+        Nombre de usuario: absenta_oficial
+        Contraseña: 4bs3nt4
+        
+
+04:03:48 PM: DEBUG
+[MenuAppUsuario.py: 19]
+
+        ID: 4
+        Nombre de usuario: SirRinoceronte
+        Contraseña: r1n0c3r0nt3
+        
+
+04:05:28 PM: ERROR
+[MenuAppUsuario.py: 35]
+Ocurrió una excepción:
+UsuarioDAO.insertar() got an unexpected keyword argument 'password'
+
+04:06:33 PM: ERROR
+[MenuAppUsuario.py: 35]
+Ocurrió una excepción:
+UsuarioDAO.insertar() takes 2 positional arguments but 3 were given
+
+04:09:37 PM: ERROR
+[MenuAppUsuario.py: 35]
+Ocurrió una excepción:
+UsuarioDAO.insertar() got an unexpected keyword argument 'username'
+
+04:11:06 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+04:11:06 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x0000017D80DDB980>
+
+04:11:06 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x0000017D82CF58B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:11:07 PM: DEBUG
+[UsuarioDAO.py: 28]
+Registro insertado en la Base de Datos:
+
+        ID: None
+        Nombre de usuario: ictus7
+        Contraseña: 1ctu57
+        
+
+04:11:07 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+04:11:07 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+04:11:07 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x0000017D82CF58B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:11:33 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+04:11:33 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x0000017D82CF58B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:11:33 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+04:11:33 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+04:11:33 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x0000017D82CF58B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:11:33 PM: DEBUG
+[MenuAppUsuario.py: 19]
+
+        ID: 1
+        Nombre de usuario: jperez
+        Contraseña: 123456
+        
+
+04:11:33 PM: DEBUG
+[MenuAppUsuario.py: 19]
+
+        ID: 2
+        Nombre de usuario: kgomez
+        Contraseña: 789123
+        
+
+04:11:33 PM: DEBUG
+[MenuAppUsuario.py: 19]
+
+        ID: 3
+        Nombre de usuario: absenta_oficial
+        Contraseña: 4bs3nt4
+        
+
+04:11:33 PM: DEBUG
+[MenuAppUsuario.py: 19]
+
+        ID: 4
+        Nombre de usuario: SirRinoceronte
+        Contraseña: r1n0c3r0nt3
+        
+
+04:11:33 PM: DEBUG
+[MenuAppUsuario.py: 19]
+
+        ID: 5
+        Nombre de usuario: ictus7
+        Contraseña: 1ctu57
+        
+
+04:11:56 PM: ERROR
+[MenuAppUsuario.py: 36]
+Ocurrió una excepción:
+UsuarioDAO.actualizar() got an unexpected keyword argument 'id_usuario'
+
+04:16:40 PM: ERROR
+[MenuAppUsuario.py: 36]
+Ocurrió una excepción:
+UsuarioDAO.actualizar() got an unexpected keyword argument 'id_usuario'
+
+04:19:35 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+04:19:35 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x00000281F795B980>
+
+04:19:35 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x00000281F98E58B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:19:35 PM: DEBUG
+[UsuarioDAO.py: 36]
+Registro actualizado en la Base de Datos:
+
+        ID: 1
+        Nombre de usuario: clammbon
+        Contraseña: cl4mmb0n
+        
+
+04:19:35 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+04:19:35 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+04:19:35 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x00000281F98E58B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:20:42 PM: ERROR
+[MenuAppUsuario.py: 37]
+Ocurrió una excepción:
+UsuarioDAO.borrar() got an unexpected keyword argument 'id_usuario'
+
+04:23:13 PM: ERROR
+[MenuAppUsuario.py: 38]
+Ocurrió una excepción:
+UsuarioDAO.borrar() got an unexpected keyword argument 'id_usuario'
+
+04:27:49 PM: ERROR
+[MenuAppUsuario.py: 37]
+Ocurrió una excepción:
+UsuarioDAO.borrar() got an unexpected keyword argument 'id_usuario'
+
+04:30:00 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+04:30:01 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x00000216CA7DB710>
+
+04:30:01 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x00000216CC2D58B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:30:01 PM: DEBUG
+[UsuarioDAO.py: 44]
+Registro eliminado de la Base de Datos:
+
+        ID: 1
+        Nombre de usuario: None
+        Contraseña: None
+        
+
+04:30:01 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+04:30:01 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+04:30:01 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x00000216CC2D58B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:31:19 PM: DEBUG
+[MenuAppUsuario.py: 36]
+Vuelva pronto.
+
+04:59:59 PM: DEBUG
+[CursorDelPool.py: 10]
+Inicio del método with __enter__
+
+04:59:59 PM: DEBUG
+[Conexion.py: 29]
+Creación exitosa del pool de conexiones:
+<psycopg2.pool.SimpleConnectionPool object at 0x00000208481BA5A0>
+
+04:59:59 PM: DEBUG
+[Conexion.py: 40]
+Conexion obtenida del pool:
+<connection object at 0x000002084A0B57A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:59:59 PM: DEBUG
+[CursorDelPool.py: 16]
+Se ejecuta el método __exit__
+
+04:59:59 PM: DEBUG
+[CursorDelPool.py: 22]
+Commit de la transacción
+
+04:59:59 PM: DEBUG
+[Conexion.py: 46]
+Conexión regresada al pool de conexiones:
+<connection object at 0x000002084A0B57A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+
+04:59:59 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 2
+        Nombre de usuario: kgomez
+        Contraseña: 789123
+        
+
+04:59:59 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 3
+        Nombre de usuario: absenta_oficial
+        Contraseña: 4bs3nt4
+        
+
+04:59:59 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 4
+        Nombre de usuario: SirRinoceronte
+        Contraseña: r1n0c3r0nt3
+        
+
+04:59:59 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 5
+        Nombre de usuario: ictus7
+        Contraseña: 1ctu57
+        
+
+05:00:47 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 2
+        Nombre de usuario: kgomez
+        Contraseña: 789123
+        
+
+05:00:47 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 3
+        Nombre de usuario: absenta_oficial
+        Contraseña: 4bs3nt4
+        
+
+05:00:47 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 4
+        Nombre de usuario: SirRinoceronte
+        Contraseña: r1n0c3r0nt3
+        
+
+05:00:47 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 5
+        Nombre de usuario: ictus7
+        Contraseña: 1ctu57
+        
+
+05:11:13 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 2
+        Nombre de usuario: kgomez
+        Contraseña: 789123
+        
+
+05:11:13 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 3
+        Nombre de usuario: absenta_oficial
+        Contraseña: 4bs3nt4
+        
+
+05:11:13 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 4
+        Nombre de usuario: SirRinoceronte
+        Contraseña: r1n0c3r0nt3
+        
+
+05:11:13 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 5
+        Nombre de usuario: ictus7
+        Contraseña: 1ctu57
+        
+
+05:11:46 PM: INFO
+[MenuAppUsuario.py: 25]
+Usuario agregado a la Base de Datos: 1
+
+05:11:55 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 2
+        Nombre de usuario: kgomez
+        Contraseña: 789123
+        
+
+05:11:55 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 3
+        Nombre de usuario: absenta_oficial
+        Contraseña: 4bs3nt4
+        
+
+05:11:55 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 4
+        Nombre de usuario: SirRinoceronte
+        Contraseña: r1n0c3r0nt3
+        
+
+05:11:55 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 5
+        Nombre de usuario: ictus7
+        Contraseña: 1ctu57
+        
+
+05:11:55 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 6
+        Nombre de usuario: skinny_pete
+        Contraseña: 5k1nny
+        
+
+05:12:51 PM: INFO
+[MenuAppUsuario.py: 32]
+Usuario actualizado en la Base de Datos: 1
+
+05:12:51 PM: ERROR
+[MenuAppUsuario.py: 39]
+Ocurrió una excepción:
+invalid literal for int() with base 10: ''
+
+05:13:36 PM: INFO
+[MenuAppUsuario.py: 32]
+Usuario actualizado en la Base de Datos: 1
+
+05:13:41 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 2
+        Nombre de usuario: taco_ingeniero
+        Contraseña: 67890
+        
+
+05:13:41 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 3
+        Nombre de usuario: absenta_oficial
+        Contraseña: 4bs3nt4
+        
+
+05:13:41 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 4
+        Nombre de usuario: SirRinoceronte
+        Contraseña: r1n0c3r0nt3
+        
+
+05:13:41 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 5
+        Nombre de usuario: ictus7
+        Contraseña: 1ctu57
+        
+
+05:13:41 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 6
+        Nombre de usuario: skinny_pete
+        Contraseña: 5k1nny
+        
+
+05:14:01 PM: INFO
+[MenuAppUsuario.py: 37]
+Usuario eliminado de la Base de Datos: 1
+
+05:14:02 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 2
+        Nombre de usuario: taco_ingeniero
+        Contraseña: 67890
+        
+
+05:14:02 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 3
+        Nombre de usuario: absenta_oficial
+        Contraseña: 4bs3nt4
+        
+
+05:14:02 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 4
+        Nombre de usuario: SirRinoceronte
+        Contraseña: r1n0c3r0nt3
+        
+
+05:14:02 PM: INFO
+[MenuAppUsuario.py: 19]
+
+        ID: 5
+        Nombre de usuario: ictus7
+        Contraseña: 1ctu57
+        
+
+05:14:07 PM: INFO
+[MenuAppUsuario.py: 42]
+Fin de la ejecución
+
